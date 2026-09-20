@@ -86,7 +86,9 @@ def solve(url):
                     r'(?:token|flag)[^<>]*?>\s*([^<]{4,})']:
         m = re.search(pattern, login.text, re.I | re.S)
         if m:
-            print(f'\n[+] TOKEN / FLAG: {m.group(1).strip()}')
+            token = m.group(1).strip()
+            print(f'\n[+] TOKEN / FLAG: {token}')
+            print(f'[+] RESULTADO: {token}')
             return
 
     print('[+] Respuesta de la pagina (busca el token manualmente si no aparece):')
